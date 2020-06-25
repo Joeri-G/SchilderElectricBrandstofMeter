@@ -1,29 +1,7 @@
-#define CH_CSIZE 9  // num of commands and callbacks
-
+#include "Constants.h"
 #include "math.h"
 #include "EEPROMAnything.h"
 #include "SerialControl.h"
-
-#define CURRENT_VERSION "0.1.4"
-
-#define SERIAL_DECIMAL_PRECISION 5 // decimals precision in output
-
-#define I_PIN A0  // input pin  must be analog (marked with ~ in schematic)
-#define O_PIN 11  // output pin must be analog (marked with ~ in schematic)
-
-#define Y_MIN 0   // min value of y
-#define Y_MAX 5   // max value of y
-
-#define X_MIN 0   // min value of x
-#define X_MAX 100 // max value of x
-
-#define ANALOG_OUT_MIN 0    // min analogWrite out
-#define ANALOG_OUT_MAX 255  // max analogWrite out
-
-#define ANALOG_IN_MIN 0     // min analogRead
-#define ANALOG_IN_MAX 1023  // max analogRead
-
-#define EEPROM_START 0 // start of part of EEPROM that is used for config
 
 // doubles because more precision. Downside is that on some arduinos its 4 bytes and on some its 8 bytes
 static double a = 1;
@@ -118,7 +96,7 @@ void loop() {
  */
 double XtoDouble(int* in) {
   return constrain( // return x if a < x < b. else if a > x, return a else if x > b return b
-    (*in / (double) ANALOG_IN_MAX * (double) X_MAX), // typecast to double because somehow it would return an int if I didnt
+    V_MAX / (ANALOG_IN_MAX / (double) *in), // typecast to double because somehow it would return an int if I didnt
     ANALOG_IN_MIN,
     ANALOG_IN_MAX
   );
@@ -141,7 +119,7 @@ double calcY(double* x) {
  */
 int YtoAnalog(double* y) {
   return constrain( // return x if a < x < b. else if a > x, return a else if x > b return b
-    ANALOG_OUT_MAX - (*y / ANALOG_OUT_MAX * 100), // since the mosfet we use is inverted (HIGH = closed, LOW = open) we invert the signal in software
+    (ANALOG_OUT_MAX / (V_MAX/ *y)), // since the mosfet we use is inverted (HIGH = closed, LOW = open) we invert the signal in software
     ANALOG_OUT_MIN,
     ANALOG_OUT_MAX
   );
