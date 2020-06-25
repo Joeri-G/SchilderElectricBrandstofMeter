@@ -75,17 +75,15 @@ void loop() {
   y = calcY(&x);
   // write the y value casted to an int in the rage of ANALOG_IN_MAX abd ANALOG_IN_MIN
   analogWrite(O_PIN, YtoAnalog(&y));
-
   if (!doVerboseOutput) return; // check if we want verbose output
-
   Serial.print("in = ");
-  Serial.print(analogIN,      SERIAL_DECIMAL_PRECISION);
+  Serial.print(analogIN);
   Serial.print("\nx = ");
   Serial.print(x,             SERIAL_DECIMAL_PRECISION);
   Serial.print("\ny = ");
   Serial.print(y,             SERIAL_DECIMAL_PRECISION);
   Serial.print("\nout = ");
-  Serial.print(YtoAnalog(&y), SERIAL_DECIMAL_PRECISION);
+  Serial.print(YtoAnalog(&y));
   Serial.println("\n");
 }
 

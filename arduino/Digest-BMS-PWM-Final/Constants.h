@@ -9,12 +9,6 @@
 #define I_PIN A0  // input pin  must be analog (marked with ~ in schematic)
 #define O_PIN 11  // output pin must be analog (marked with ~ in schematic)
 
-#define Y_MIN 0L  // min value of y
-#define Y_MAX 5L  // max value of y
-
-#define X_MIN 0L    // min value of x
-#define X_MAX 100L  // max value of x
-
 #define ANALOG_OUT_MIN 0L   // min analogWrite out
 #define ANALOG_OUT_MAX 255L // max analogWrite out
 
