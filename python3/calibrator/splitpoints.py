@@ -38,4 +38,11 @@ def splitPoints(inp):
         out['x'].append(x)
         out['y'].append(y)
         out['points'].append((x, y))
+
+    for i in range(len(out['x'])):
+        if i > 0:
+            if out['x'][i] <= out['x'][i-1]:
+                out['valid'] = False
+                return out
+
     return out

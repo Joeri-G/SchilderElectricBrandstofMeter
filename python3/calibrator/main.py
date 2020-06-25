@@ -30,14 +30,14 @@ if __name__ == "__main__":
 
         pointData = sP.splitPoints(sys.argv[sys.argv.index("-p") + 1])
         if (pointData['valid'] != True):
-            exit("Could not find formula. Please check your formatting \"(x;y)\"")
+            exit("Could not find formula. Please check your formatting \"(x;y)\" and enter the points from smallest to largest")
     else:
         pointData = {
             'valid': False
         }
     # keep on asking for points until the input is valid
     while pointData['valid'] != True:
-        print("Please enter 3 or more points\n\t(x,y) with either a comma or a semicolon to separate x and y. Whitepsaces are optional\n");
+        print("Please enter 3 or more points from smallest to largest\n\t(x,y) with either a comma or a semicolon to separate x and y. Whitepsaces are optional\n");
         inp = input("points: ")
         pointData = sP.splitPoints(inp)
 
@@ -74,6 +74,4 @@ if __name__ == "__main__":
                 yValues.append(lp.interpolate(xx))
 
         plt.plot(xx, yValues)
-        plt.show(block=False)
-
-        input("Press enter to exit the program")
+        plt.show(block=True)
