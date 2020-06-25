@@ -2,6 +2,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
+# I have no idea how this does it, but it works
 # https://stackoverflow.com/a/58885954
 class LagrangePoly:
 
