@@ -30,7 +30,7 @@ if __name__ == "__main__":
 
         pointData = sP.splitPoints(sys.argv[sys.argv.index("-p") + 1])
         if (pointData['valid'] != True):
-            exit("Could not find formula. Please check your formatting \"(x;y)\" and enter the points from smallest to largest")
+            exit("Could not find formula. Please check your formatting \"(x;y)\" and enter the points from smallest t")
     else:
         pointData = {
             'valid': False
