@@ -17,7 +17,7 @@ Dependencies:
   * matplotlib.plypot
   * decimal
 
-`$ ./Function_Finder`
+`$ ./Function_Finder.py` || `$ python3 Function_Finder.py`
 
 Flag | Function | Arguments
 -----|----------|----------
