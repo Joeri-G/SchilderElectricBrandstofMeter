@@ -12,7 +12,7 @@ double constrain(double x, double lower, double upper) {
  */
 int YtoAnalog(double* y) {
   return constrain( // return x if a < x < b. else if a > x, return a else if x > b return b
-    (ANALOG_OUT_MAX / (V_MAX/ *y)), // since the mosfet we use is inverted (HIGH = closed, LOW = open) we invert the signal in software
+    255 - (ANALOG_OUT_MAX / (V_MAX/ *y)), // since the mosfet we use is inverted (HIGH = closed, LOW = open) we invert the signal in software
     ANALOG_OUT_MIN,
     ANALOG_OUT_MAX
   );
