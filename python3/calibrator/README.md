@@ -34,4 +34,4 @@ Flag | Function | Argument Type
  --percentage | The X coordinate represents a percentage | NULL
  --voltage | The X coordinate represents a voltage (Vin) | NULL
  -v \<voltage> | Voltage that represents a 100% load | INT \|\| FLOAT
- -p \<point, [point, point...]> | Supply one or more points as argument instead of typing them in at runtime<br> Whitespaces are ignored Period (.) is user for decimal notation | STRING: (x,y) \|\| STRING: (x;y)
+ -p \<point, [point, point...]> | Supply one or more points as argument instead of typing them in at runtime<br> Whitespaces are ignored Period (.) is user for decimal notation | STRING (x,y) \|\| STRING (x;y)
