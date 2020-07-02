@@ -17,10 +17,21 @@ Dependencies:
   * matplotlib.plypot
   * decimal
 
-`$ ./Function_Finder.py` || `$ python3 Function_Finder.py`
+#### Universal:
+`$ python3 Gauge_Calibrator.py [--no-graph || --draw-graph] [--percentage || --voltage] [-v int] [-p <points>]`
 
-Flag | Function | Arguments
------|----------|----------
--p   | Add points as argument instead of writing them during run-time | [\<point>, \<point>, ...]
---no-graph | Don't ask the user to show the graph and end the program
---show-graph | Don't ask the user to show the graph and show the graph as soon as the function is found
+#### OSX / Linux:
+`$ ./Gauge_Calibrator.py [--no-graph || --draw-graph] [--percentage || --voltage] [-v int] [-p <points>]`
+
+#### Windows only:
+`$ py Gauge_Calibrator.py [--no-graph || --draw-graph] [--percentage || --voltage] [-v int] [-p <points>]`
+
+## Arguments:
+Flag | Function | Argument Type
+-----|----------|--------------
+ --draw-graph | Draw graph (default = ask) | NULL
+ --no-graph | Don't draw graph (default = ask) | NULL
+ --percentage | The X coordinate represents a percentage | NULL
+ --voltage | The X coordinate represents a voltage (Vin) | NULL
+ -v \<voltage> | Voltage that represents a 100% load | INT \|\| FLOAT
+ -p \<point, [point, point...]> | Supply one or more points as argument instead of typing them in at runtime<br> Whitespaces are ignored Period (.) is user for decimal notation | STRING: (x,y) \|\| STRING: (x;y)
