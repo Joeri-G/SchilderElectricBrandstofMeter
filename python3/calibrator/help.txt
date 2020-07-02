@@ -1,14 +1,24 @@
-Function_Finder.py
-Joeri Geuzinge
-
-Fit a function to a list of points
+Function:
+Fit a function to a list of points and return values that can be used to calibrate the fuel gauge
 
 Usage:
-$ ./Function_Finder.py [--no-graph || --draw-graph] [-p <points>]
-$ python3 Function_Finder.py [--no-graph || --draw-graph] [-p <points>]
-$ py Function_Finder.py [--no-graph || --draw-graph] [-p <points>]
+Universal:
+$ python3 Gauge_Calibrator.py [--no-graph || --draw-graph] [--percentage || --voltage] [-v int] [-p <points>]
 
+OSX / Linux:
+$ ./Gauge_Calibrator.py [--no-graph || --draw-graph] [--percentage || --voltage] [-v int] [-p <points>]
+
+Windows only:
+$ py Gauge_Calibrator.py [--no-graph || --draw-graph] [--percentage || --voltage] [-v int] [-p <points>]
+
+Arguments:
   --draw-graph    Draw graph (default = ask)
   --no-graph      Don't draw graph (default = ask)
+
+  --percentage    The X coordinate represents a percentage
+  --voltage       The X coordinate represents a voltage (Vin)
+
+  -v <voltage>    Voltage that represents a 100% load
+
   -p <points>     Supply points as argument point = (x,y) || ( x ; y ) or a variation.
                   Whitespaces are not counted and comma and semicolon are interchangeable. Decimal delimiter is period (.).
