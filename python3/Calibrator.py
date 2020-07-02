@@ -210,7 +210,7 @@ Arguments:
 
         pointData = splitPoints(sys.argv[sys.argv.index("-p") + 1])
         if (pointData['valid'] != True):
-            exit("Could not find formula. Please check your formatting \"(x;y)\" and enter the points from smallest t")
+            raise ValueError("Could not find formula. Please check your formatting \"(x;y)\" and enter the points from smallest to largest")
     else:
         pointData = {
             'valid': False
