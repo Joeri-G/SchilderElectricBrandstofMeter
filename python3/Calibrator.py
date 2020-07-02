@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-import sys, os
+import matplotlib.pyplot as plt
+import numpy as np
+import decimal, sys, os
 """
 This script creates a quadratic formula (ax^2+bx+c) based on three or more points
 It is not 100% accurate as it suffers from floating point inaccuracy.
@@ -11,10 +13,6 @@ Right now we use a Larange Interpolation algorythm to calculate the Y value of 3
 After that we give the end user the option to draw a graph form x[0,5] and y[0,5]
 """
 
-#!/usr/bin/env python3
-import matplotlib.pyplot as plt
-import numpy as np
-import decimal, sys
 
 # I have no idea how this does it, but it works
 # https://stackoverflow.com/a/58885954
