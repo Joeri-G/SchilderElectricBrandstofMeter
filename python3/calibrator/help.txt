@@ -1,0 +1,14 @@
+Function_Finder.py
+Joeri Geuzinge
+
+Fit a function to a list of points
+
+Usage:
+$ ./Function_Finder.py [--no-graph || --draw-graph] [-p <points>]
+$ python3 Function_Finder.py [--no-graph || --draw-graph] [-p <points>]
+$ py Function_Finder.py [--no-graph || --draw-graph] [-p <points>]
+
+  --draw-graph    Draw graph (default = ask)
+  --no-graph      Don't draw graph (default = ask)
+  -p <points>     Supply points as argument point = (x,y) || ( x ; y ) or a variation.
+                  Whitespaces are not counted and comma and semicolon are interchangeable. Decimal delimiter is period (.).

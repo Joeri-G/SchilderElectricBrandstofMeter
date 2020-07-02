@@ -5,6 +5,8 @@ import quadraticSolver as qS
 import LarangeInterpolation as lI
 import splitpoints as sP
 import sys
+import os
+import inspect
 
 """
 This script creates a quadratic formula (ax^2+bx+c) based on three or more points
@@ -19,10 +21,19 @@ After that we give the end user the option to draw a graph form x = -50 to x = 1
 """
 
 # (0;0.83) (50;2.12) (100;3.06)
-# -0.00007x^2+0.0293x+0.83
+# -0.00007x^2+0.0293x+0.83x
 # -0.00007000000000000002x^2+0.029300000000000003x+0.83
 
 if __name__ == "__main__":
+    scriptdir = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
+    # check for --help arg
+    if "--help" in sys.argv:
+        with open(scriptdir+"/help.txt", "r") as f:
+            for line in f.readlines():
+                print(line, end="")
+        exit()
+
+
     # check if points have been supplied via the arguments
     if "-p" in sys.argv:
         if len(sys.argv) <= sys.argv.index("-p") or sys.argv[sys.argv.index("-p") + 1][0] == "-":
