@@ -43,7 +43,7 @@ String commands[CH_CSIZE] = {"setA", "setB", "setC", "getABC", "printY", "toggle
 int callbacks[CH_CSIZE] = {&setA, &setB, &setC, &getABC, &printY, &toggleVerboseOutput, &toggleDecimalWarn, &info, &command_help};
 
 
-void setup() { @FranchuFranchu That one I know about, I'm mainly talking about staff machines not servers
+void setup() {
   EEPROM_readAnything(EEPROM_START, a);
   EEPROM_readAnything(EEPROM_START + dOffset, b);
   EEPROM_readAnything(EEPROM_START + 2 * dOffset, c);
@@ -117,7 +117,7 @@ double calcY(double* x) {
  */
 int YtoAnalog(double* y) {
   return constrain( // return x if a < x < b. else if a > x, return a else if x > b return b
-    255 - (ANALOG_OUT_MAX / (V_MAX/ *y)), // since the mosfet we use is inverted (HIGH = closed, LOW = open) we invert the signal in software
+    ANALOG_OUT_MAX - (ANALOG_OUT_MAX / (V_MAX/ *y)), // since the mosfet we use is inverted (HIGH = closed, LOW = open) we invert the signal in software
     ANALOG_OUT_MIN,
     ANALOG_OUT_MAX
   );
